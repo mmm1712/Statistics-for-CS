@@ -1,7 +1,7 @@
  # Parameters
-> n <- 20
-> p <- 0.65
-> 
-> # Probability that X > 10
-> prob <- 1 - pbinom(10, n, p)
-> prob
+ n <- 20
+ p <- 0.65
+ 
+ # Probability that X > 10
+ prob <- 1 - pbinom(10, n, p)
+ prob
