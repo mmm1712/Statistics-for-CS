@@ -1,0 +1,5 @@
+# Compute the number of ways to distribute 13 cards to each of two players
+ways <- choose(52, 13)
+
+# Print the result
+print(ways)
