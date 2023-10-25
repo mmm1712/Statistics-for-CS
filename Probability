@@ -1,0 +1,11 @@
+# Compute the total number of ways to distribute 13 cards to each of two players
+total_ways <- choose(52, 13)
+
+# The number of favorable outcomes is 2 (Player 1 gets all red and Player 2 gets all black, or vice versa)
+favorable_outcomes <- 2
+
+# Compute the probability
+probability <- favorable_outcomes / total_ways
+
+# Print the result
+print(probability)
