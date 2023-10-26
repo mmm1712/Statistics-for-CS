@@ -1,0 +1,13 @@
+# Factorial function
+factorial <- function(n) {
+  if (n == 0) {
+    return(1)
+  } else {
+    return(n * factorial(n-1))
+  }
+}
+
+# Calculate the number of ways to rearrange the letters in "STATISTICS"
+ways <- factorial(10) / (factorial(3) * factorial(3) * factorial(2) * factorial(1) * factorial(1))
+
+print(ways)
