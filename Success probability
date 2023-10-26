@@ -1,0 +1,10 @@
+# Given parameters
+n <- [Your number of trials here]  # Replace with your number of trials
+p <- [Your probability of success]  # Replace with your probability of success
+k <- [Desired number of successes]  # Replace with your desired number of successes
+
+# Compute the probability using the dbinom() function
+prob_k_successes <- dbinom(k, n, p)
+
+# Print the result
+print(prob_k_successes)
