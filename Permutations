@@ -1,0 +1,3 @@
+# Compute the number of ways to distribute 13 cards to each of two players using permutations
+ways_permutations <- factorial(52) / factorial(52 - 13)
+print(ways_permutations)
