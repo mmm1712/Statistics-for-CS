@@ -1,0 +1,12 @@
+# Calculate the sum of the reciprocals of x values from 1 to 6
+sum_reciprocals <- sum(1/(1:6))
+
+# Find the value of c
+c_value <- 1 / sum_reciprocals
+
+# Calculate P(1 < X < 6), which is the sum of probabilities for x = 2, 3, 4, 5
+p_1_lt_X_lt_6 <- sum(c_value / (2:5))
+
+# Output the results
+cat("a. Value of c:", c_value, "\n")
+cat("b. P(1 < X < 6):", p_1_lt_X_lt_6, "\n")
