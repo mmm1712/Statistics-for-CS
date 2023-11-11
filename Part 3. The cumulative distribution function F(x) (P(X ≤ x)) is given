@@ -1,0 +1,34 @@
+# Define the cumulative distribution function
+F <- function(x) {
+  ifelse(x <= 0, 0, 1 - exp(-0.03 * x^1.2))
+}
+
+# a. Probability that a jet engine will last less than 12 months
+prob_less_than_12 <- F(12)
+
+# b. Probability that a jet engine will last more than 12 months
+prob_more_than_12 <- 1 - prob_less_than_12
+
+# c. Probability it will last more than 12 months given it has lasted more than 6 months
+prob_more_than_12_given_6 <- (1 - F(12)) / (1 - F(6))
+
+# d. 50th percentile of X
+percentile_50 <- uniroot(function(x) F(x) - 0.5, lower = 0, upper = 100)$root
+
+# e. Probability only one of two independent jet engines lasts more than 12 months
+prob_one_more_than_12 <- prob_more_than_12 * (1 - prob_more_than_12) + 
+                         (1 - prob_more_than_12) * prob_more_than_12
+
+# f. Probability density function f(x)
+f <- function(x) {
+  ifelse(x <= 0, 0, 0.03 * 1.2 * x^0.2 * exp(-0.03 * x^1.2))
+}
+
+# Output the results
+list(
+  prob_less_than_12 = prob_less_than_12,
+  prob_more_than_12 = prob_more_than_12,
+  prob_more_than_12_given_6 = prob_more_than_12_given_6,
+  percentile_50 = percentile_50,
+  prob_one_more_than_12 = prob_one_more_than_12
+)
