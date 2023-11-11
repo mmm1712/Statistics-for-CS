@@ -1,0 +1,26 @@
+# Define the parameter theta
+theta <- 10  # minutes
+
+# a. Probability of waiting more than 3 minutes
+p_wait_more_than_3 <- exp(-3 / theta)
+
+# b. Expected time for the first car to arrive
+expected_time <- theta
+
+# c. Probability of waiting at least an additional 3 minutes after already waiting 2 minutes
+# Due to the memoryless property
+p_wait_additional_3_after_2 <- exp(-3 / theta)
+
+# d. Expected time for 10 independent cars to arrive
+# Since the expected time for each car is theta, and cars arrive independently
+expected_time_for_10_cars <- 10 * theta
+
+# Variance for the wait time of 10 independent cars
+variance_for_10_cars <- 10 * theta^2
+
+# Output the results
+cat("a. Probability of waiting more than 3 minutes:", p_wait_more_than_3, "\n")
+cat("b. Expected time for the first car to arrive:", expected_time, "minutes\n")
+cat("c. Probability of waiting at least an additional 3 minutes after 2 minutes:", p_wait_additional_3_after_2, "\n")
+cat("d. Expected time for 10 cars:", expected_time_for_10_cars, "minutes\n")
+cat("   Variance for 10 cars:", variance_for_10_cars, "minutes^2\n")
