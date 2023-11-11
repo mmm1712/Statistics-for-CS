@@ -1,0 +1,32 @@
+# Define the density function f(x) with a variable c
+f <- function(x, c) c * x^3
+
+# Function to integrate f(x) over an interval
+integrate_f <- function(lower, upper, c) {
+  integrate(function(x) f(x, c), lower, upper)$value
+}
+
+# Find the value of c such that the integral of f(x) from 0 to 2 equals 1
+c_value <- 1 / integrate_f(0, 2, 1)
+
+# Calculate P(X = 1) and P(X = 1 or X = 2)
+# For a continuous distribution, the probability of a single value is 0
+p_x_1 <- 0
+p_x_1_or_2 <- 0
+
+# Calculate the expectation E(X)
+expectation_x <- integrate(function(x) x * f(x, c_value), 0, 2)$value
+
+# Calculate P(0.5 < X < 1.5) and P(0.5 < X < 2.5)
+p_0_5_to_1_5 <- integrate_f(0.5, 1.5, c_value)
+
+# Corrected: P(0.5 < X < 2.5) should be P(0.5 < X < 2)
+p_0_5_to_2_5 <- integrate_f(0.5, 2, c_value)
+
+# Output the results
+cat("c_value:", c_value, "\n")
+cat("P(X = 1):", p_x_1, "\n")
+cat("P(X = 1 or X = 2):", p_x_1_or_2, "\n")
+cat("Expectation E(X):", expectation_x, "\n")
+cat("P(0.5 < X < 1.5):", p_0_5_to_1_5, "\n")
+cat("P(0.5 < X < 2.5):", p_0_5_to_2_5, "\n")
