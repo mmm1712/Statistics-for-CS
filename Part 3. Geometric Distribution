@@ -1,0 +1,21 @@
+# Define the probability of success
+p <- 0.85
+
+# b. Expected number of attempts and variance
+expected_attempts <- 1 / p
+variance_attempts <- (1 - p) / p^2
+
+# c. Probability of needing more than 2 attempts
+prob_more_than_2 <- 1 - pgeom(1, p)
+
+# d. Expected number of batteries used before both robots complete the task
+expected_batteries_per_robot <- 2 * expected_attempts
+total_expected_batteries <- 2 * expected_batteries_per_robot
+
+# Output the results
+list(
+  expected_attempts = expected_attempts,
+  variance_attempts = variance_attempts,
+  prob_more_than_2 = prob_more_than_2,
+  total_expected_batteries = total_expected_batteries
+)
