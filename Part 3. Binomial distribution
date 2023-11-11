@@ -1,0 +1,25 @@
+# Define parameters
+n <- 100
+p <- 0.85
+
+# b. Expected number of successes and variance
+expected_value <- n * p
+variance <- n * p * (1 - p)
+
+# c. Probability of succeeding less than or equal to 80 times
+prob_less_equal_80 <- pbinom(80, n, p)
+
+# d. Using the complement rule
+prob_less_equal_80_complement <- 1 - pbinom(80, n, p, lower.tail = FALSE)
+
+# e. Probability both robots succeed less than or equal to 80 times
+prob_both_less_equal_80 <- prob_less_equal_80 * prob_less_equal_80
+
+# Output the results
+list(
+  expected_value = expected_value,
+  variance = variance,
+  prob_less_equal_80 = prob_less_equal_80,
+  prob_less_equal_80_complement = prob_less_equal_80_complement,
+  prob_both_less_equal_80 = prob_both_less_equal_80
+)
