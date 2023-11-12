@@ -1,0 +1,31 @@
+# Define parameters
+lambda <- 100  # Expected number of emails per hour
+p_spam <- 0.20 # Probability an email is spam
+
+# a. Expected number and standard deviation
+expected_emails <- lambda
+std_dev_emails <- sqrt(lambda)
+
+# b. Probability of receiving exactly 100 emails in an hour
+prob_exactly_100 <- dpois(100, lambda)
+
+# c. Probability of receiving at most 100 emails in an hour
+prob_at_most_100 <- ppois(100, lambda)
+
+# d. Expected number and standard deviation over 3 hours
+expected_emails_3hrs <- 3 * lambda
+std_dev_emails_3hrs <- sqrt(3 * lambda)
+
+# e. Probability all 100 emails are spam
+prob_all_spam <- dbinom(100, 100, p_spam)
+
+# Output the results
+list(
+  expected_emails = expected_emails,
+  std_dev_emails = std_dev_emails,
+  prob_exactly_100 = prob_exactly_100,
+  prob_at_most_100 = prob_at_most_100,
+  expected_emails_3hrs = expected_emails_3hrs,
+  std_dev_emails_3hrs = std_dev_emails_3hrs,
+  prob_all_spam = prob_all_spam
+)
